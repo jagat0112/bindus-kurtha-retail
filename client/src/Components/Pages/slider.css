@@ -1,0 +1,47 @@
+/* .slider {
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin:10px 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    position: block;
+    padding: 0 20px;
+    border: none;
+    min-width: 23%;
+    height: 80vh;
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+
+#goLeft{
+    position: absolute;
+    top :50%;
+    left:0;
+    transform: translateY(-50%);
+    width: 5%;
+    height: 80%;
+    background: none;
+    border:none;
+    outline: none;
+
+}
+
+#goRight{
+    position: absolute;
+    top :50%;
+    right:0;
+    transform: translateY(-50%);
+    width: 5%;
+    height: 80%;
+    background: none;
+    border:none;
+    outline: none;
+} */
