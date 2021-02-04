@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import SearchIcon from "../Assests/search-icon.png";
 import AuthContext from "../context/Auth/AuthContext";
 
 const Navbar = () => {
   const authContext = useContext(AuthContext);
+  const [searchBox, setsearchBox] = useState(false);
+
+  const openSearch = () => {
+    setsearchBox(searchBox ? false : true);
+  };
   return (
     <div>
       <header className="header" id="header">
@@ -18,6 +24,16 @@ const Navbar = () => {
           <form className="header__search">
             <input type="text" placeholder="Search.." name="search" />
           </form>
+          <div onClick={openSearch}>
+            <img width="40px" src={SearchIcon} alt=""></img>
+            <br />
+            {searchBox && (
+              <form>
+                <input type="text" placeholder="Search.." name="search" />
+              </form>
+            )}
+          </div>
+
           <div>
             {localStorage.token ? (
               <div className="header__btn-box">
