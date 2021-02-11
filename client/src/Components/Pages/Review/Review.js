@@ -17,10 +17,8 @@ const Review = ({ id }) => {
   const [reviewUser, setReviewUser] = useState("");
   useEffect(() => {
     const getMe = async () => {
-      const me = await axios.get("http://localhost:5000/api/v1/auth/me");
-      const review = await axios.get(
-        `http://localhost:5000/api/v1/clothings/${id}/review`
-      );
+      const me = await axios.get("/api/v1/auth/me");
+      const review = await axios.get(`/api/v1/clothings/${id}/review`);
       setReviewUser(review.data.review);
       setUser(me.data.data);
       review.data.review === []

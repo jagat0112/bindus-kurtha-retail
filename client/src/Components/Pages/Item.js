@@ -16,11 +16,7 @@ const Item = () => {
     productContext.product && (
       <div className="main">
         <div className="item-img">
-          <img
-            src={`http://localhost:5000/uploads/${product.photo}`}
-            alt=""
-            height="900px"
-          />
+          <img src={`/uploads/${product.photo}`} alt="" height="900px" />
         </div>
         <div className="item-detail">
           <p className="item-name">{product.name}</p>

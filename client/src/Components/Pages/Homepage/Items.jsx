@@ -76,7 +76,7 @@ const Items = () => {
                   <Link to={`/product/${product._id}`}>
                     <img
                       className="product-img"
-                      src={`http://localhost:5000/uploads/${product.photo}`}
+                      src={`/uploads/${product.photo}`}
                       height="340px"
                       alt=""
                     ></img>
@@ -112,7 +112,7 @@ const Items = () => {
                   <Link to={`/product/${product._id}`}>
                     <Card.Img
                       className="product-img2"
-                      src={`http://localhost:5000/uploads/${product.photo}`}
+                      src={`/uploads/${product.photo}`}
                       alt=""
                     ></Card.Img>
                   </Link>

@@ -15,10 +15,7 @@ const Upload = ({ uploadId, setUpload }) => {
     form.append("file", image);
 
     try {
-      await axios.put(
-        `http://localhost:5000/api/v1/clothings/${uploadId}/image`,
-        form
-      );
+      await axios.put(`/api/v1/clothings/${uploadId}/image`, form);
       setComplete(true);
       setTimeout(() => {
         setUpload(false);

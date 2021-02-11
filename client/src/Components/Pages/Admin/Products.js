@@ -15,7 +15,7 @@ const Products = () => {
     setData("");
   };
   const DeleteConfirm = async () => {
-    await axios.delete(`http://localhost:5000/api/v1/clothings/${data}`);
+    await axios.delete(`/api/v1/clothings/${data}`);
     productContext.loadProducts();
   };
 
@@ -25,7 +25,7 @@ const Products = () => {
   }, []);
 
   const onEdit = async (id) => {
-    const res = await axios.get(`http://localhost:5000/api/v1/clothings/${id}`);
+    const res = await axios.get(`/api/v1/clothings/${id}`);
     setData(res.data.data);
   };
 
@@ -46,7 +46,7 @@ const Products = () => {
                 <p className="db-item-name">{item.name}</p>
                 <img
                   className="item-admin-image"
-                  src={`http://localhost:5000/uploads/${item.photo}`}
+                  src={`/uploads/${item.photo}`}
                   alt=""
                 ></img>
                 {data._id !== item._id && (

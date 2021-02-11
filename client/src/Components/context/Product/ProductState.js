@@ -25,7 +25,7 @@ const ProductState = (props) => {
 
   // Load Products
   const loadProducts = async () => {
-    const res = await axios.get("http://localhost:5000/api/v1/clothings");
+    const res = await axios.get("/api/v1/clothings");
     console.log(res);
     dispatch({ type: LOAD_PRODUCTS, payload: res.data });
   };
@@ -38,7 +38,7 @@ const ProductState = (props) => {
   // Load a single Product
   const loadProduct = async (id) => {
     setLoadings();
-    const res = await axios.get(`http://localhost:5000/api/v1/clothings/${id}`);
+    const res = await axios.get(`/api/v1/clothings/${id}`);
     dispatch({ type: LOAD_PRODUCT, payload: res.data.data });
   };
 
@@ -49,11 +49,7 @@ const ProductState = (props) => {
         "Content-Type": "application/json",
       },
     };
-    await axios.put(
-      `http://localhost:5000/api/v1/clothings/${id}`,
-      data,
-      config
-    );
+    await axios.put(`/api/v1/clothings/${id}`, data, config);
     dispatch({ type: UPDATE_PRODUCT });
     loadProducts();
   };
@@ -64,11 +60,7 @@ const ProductState = (props) => {
         "Content-Type": "application/json",
       },
     };
-    await axios.post(
-      `http://localhost:5000/api/v1/clothings/${id}/review`,
-      form,
-      config
-    );
+    await axios.post(`/api/v1/clothings/${id}/review`, form, config);
     loadProduct(id);
   };
 
@@ -78,12 +70,12 @@ const ProductState = (props) => {
         "Content-Type": "application/json",
       },
     };
-    await axios.put(`http://localhost:5000/api/v1/reviews/${id}`, form, config);
+    await axios.put(`/api/v1/reviews/${id}`, form, config);
     loadProduct(productId);
   };
 
   const deleteReview = async (id) => {
-    await axios.delete(`http://localhost:5000/api/v1/reviews/${id}`);
+    await axios.delete(`/api/v1/reviews/${id}`);
   };
   // Set Loading
   const setLoadings = (boo) => {
@@ -92,9 +84,7 @@ const ProductState = (props) => {
 
   // Cart State
   const showCart = async (id) => {
-    const cart = await axios.get(
-      `http://localhost:5000/api/v1/auth/${id}/cart`
-    );
+    const cart = await axios.get(`/api/v1/auth/${id}/cart`);
     console.log(cart);
     dispatch({ type: SHOW_CART, payload: cart.data });
   };

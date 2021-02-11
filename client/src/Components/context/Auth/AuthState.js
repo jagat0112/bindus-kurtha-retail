@@ -27,7 +27,7 @@ const AuthState = (props) => {
 
   // Load User
   const loadUser = async () => {
-    const res = await axios.get("http://localhost:5000/api/v1/auth/me");
+    const res = await axios.get("/api/v1/auth/me");
     dispatch({ type: LOAD_USER, payload: res.data });
   };
 
@@ -44,11 +44,7 @@ const AuthState = (props) => {
       },
     };
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/v1/auth/login",
-        formData,
-        config
-      );
+      const res = await axios.post("/api/v1/auth/login", formData, config);
       dispatch({ type: LOG_IN, payload: res.data });
     } catch (error) {
       dispatch({ type: LOGIN_FAIL, payload: error.response.data.error });
@@ -60,7 +56,7 @@ const AuthState = (props) => {
   };
 
   const getMe = async () => {
-    const me = await axios.get("http://localhost:5000/api/v1/auth/me");
+    const me = await axios.get("/api/v1/auth/me");
     dispatch({ type: GET_ME, payload: me.data.data });
   };
 
@@ -77,7 +73,7 @@ const AuthState = (props) => {
     };
     try {
       const newUser = await axios.post(
-        "http://localhost:5000/api/v1/auth/register",
+        "/api/v1/auth/register",
         formData,
         config
       );

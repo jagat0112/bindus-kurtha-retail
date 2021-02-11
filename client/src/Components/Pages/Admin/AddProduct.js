@@ -38,11 +38,7 @@ const AddProduct = () => {
       },
     };
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/v1/clothings",
-        product,
-        config
-      );
+      const res = await axios.post("/api/v1/clothings", product, config);
       if (res.data.success) {
         setUpload(true);
         setUploadId(res.data.data._id);
