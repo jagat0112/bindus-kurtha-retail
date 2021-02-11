@@ -4,7 +4,6 @@ import Loading from "../../Assests/loading.gif";
 import EditProduct from "./EditProduct";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { grey } from "colors";
 
 const Products = () => {
   const productContext = useContext(ProductContext);
@@ -31,11 +30,11 @@ const Products = () => {
   };
 
   return (
-    <div>
-      <Link className="btn1 back-btn" to={"/admin"}>
+    <div className="container">
+      <Link className="btn1 btn back-btn" to={"/admin"}>
         Back
       </Link>
-      <h1>Products</h1>
+      <p className="admin-dashboard-text">Products</p>
       {productContext.loading && (
         <img className="loading-image" src={Loading} alt=""></img>
       )}
@@ -44,7 +43,7 @@ const Products = () => {
           {productContext.products &&
             productContext.products.map((item, i) => (
               <div className="item" key={i}>
-                <h3>{item.name}</h3>
+                <p className="db-item-name">{item.name}</p>
                 <img
                   className="item-admin-image"
                   src={`http://localhost:5000/uploads/${item.photo}`}
@@ -62,11 +61,14 @@ const Products = () => {
                     {deleteWarn && data == item._id ? (
                       <div>
                         <p>Are you sure to delete this item?</p>
-                        <button className="btn1" onClick={DeleteConfirm}>
+                        <button
+                          className="btn-delete-db"
+                          onClick={DeleteConfirm}
+                        >
                           Delete
                         </button>
                         <button
-                          className="btn1"
+                          className="btn-cancel-db"
                           onClick={() => setDeleteWarn(false)}
                         >
                           Cancel
@@ -75,7 +77,7 @@ const Products = () => {
                     ) : (
                       <div>
                         <button
-                          className="btn1"
+                          className="btn-edit-db"
                           onClick={() => {
                             onEdit(item._id);
                             setEdit(true);
@@ -88,8 +90,7 @@ const Products = () => {
                             setData(item._id);
                             setDeleteWarn(true);
                           }}
-                          className="btn1"
-                          style={{ background: "red" }}
+                          className="btn-delete-db"
                         >
                           Delete
                         </button>

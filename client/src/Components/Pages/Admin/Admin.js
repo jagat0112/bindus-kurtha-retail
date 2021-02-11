@@ -8,7 +8,7 @@ const Admin = () => {
   const authContext = useContext(AuthContext);
   const productContext = useContext(ProductContext);
 
-  const [role, setRole] = useState("admin");
+  const role = "admin";
 
   useEffect(() => {
     authContext.loadUser();
@@ -18,8 +18,8 @@ const Admin = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
+    <div className="container py-5">
+      <p className="admin-dashboard-text">Admin Dashboard</p>
       {role !== "admin" || !localStorage.token ? (
         <div>Only Authorize for Admin</div>
       ) : (
@@ -38,7 +38,9 @@ const Admin = () => {
           >
             Add Product
           </Link>
-          <p className="admin-db-btn admin-db-btn-add">No of Items {productContext.count}</p>
+          <p className="admin-db-btn admin-db-btn-count">
+            No of Items {productContext.count}
+          </p>
         </div>
       )}
     </div>

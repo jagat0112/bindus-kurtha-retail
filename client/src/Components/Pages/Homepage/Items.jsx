@@ -13,6 +13,7 @@ const Items = () => {
     productContext.loadProducts();
     setProducts(JSON.parse(localStorage.products));
     console.log(products);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   var settings = {
     dots: false,
@@ -59,9 +60,9 @@ const Items = () => {
   };
   return (
     <div style={{ margin: "20px 40px" }}>
-      <div class="showcase">
-        <div class="container">
-          <h2 class="heading-primary">
+      <div className="showcase">
+        <div className="container">
+          <h2 className="heading-primary">
             <span>KURTHA</span>
           </h2>
         </div>
@@ -69,9 +70,9 @@ const Items = () => {
       <div className="sliders">
         <Slider {...settings}>
           {products &&
-            products.map((product) => {
+            products.map((product, i) => {
               return (
-                <div>
+                <div key={i}>
                   <Link to={`/product/${product._id}`}>
                     <img
                       className="product-img"
@@ -104,9 +105,9 @@ const Items = () => {
       </div>
       <div className="products-md">
         {products &&
-          products.map((product) => {
+          products.map((product, i) => {
             return (
-              <Card className="my-3">
+              <Card className="my-3" key={i}>
                 <div className="products-box">
                   <Link to={`/product/${product._id}`}>
                     <Card.Img

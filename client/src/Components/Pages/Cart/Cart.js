@@ -9,6 +9,7 @@ const Cart = () => {
   useEffect(() => {
     productContext.showCart(id);
     setCart(productContext.cart);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="cart">

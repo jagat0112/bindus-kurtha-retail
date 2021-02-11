@@ -1,12 +1,12 @@
 import "./App.css";
+import "./bindus.css";
 // import { useContext } from "React";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Components/Pages/Home";
 import Footer from "./Components/Pages/Footer";
 import Navbar from "./Components/Pages/Navbar";
 import Login from "./Components/Pages/Login";
 import Register from "./Components/Pages/Register";
-import Slider from "./Components/Pages/Slider";
 import Cart from "./Components/Pages/Cart/Cart";
 import Admin from "./Components/Pages/Admin/Admin";
 import Item from "./Components/Pages/Item";

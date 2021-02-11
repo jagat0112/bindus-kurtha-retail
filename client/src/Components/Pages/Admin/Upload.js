@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import ProductContext from "../../context/Product/ProductContext";
+import Success from "../../Assests/success.png";
 
 const Upload = ({ uploadId, setUpload }) => {
   const [image, setImage] = useState();
@@ -34,18 +35,26 @@ const Upload = ({ uploadId, setUpload }) => {
   return (
     <div>
       {!complete ? (
-        <div>
-          <h1>Upload an Image</h1>
+        <div className="text-center py-5">
+          <p className="upload-text">Upload an Image</p>
           <form onSubmit={onUpload}>
             <input
+              className="py-3 upload-form"
               type="file"
               onChange={(e) => setImage(e.target.files[0])}
             ></input>
-            <button type="submit">Upload</button>
+            <br />
+            <button type="submit" className="upload-btn">
+              Upload
+            </button>
           </form>
         </div>
       ) : (
-        <div>Item Successfully added</div>
+        <p className="item-added-success py-3">
+          {" "}
+          <img src={Success} width="20px" alt="" className="mx-2"></img>Item
+          Successfully added!
+        </p>
       )}
     </div>
   );

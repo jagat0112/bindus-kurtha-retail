@@ -10,7 +10,7 @@ import {
 const ProductReducer = (state, action) => {
   switch (action.type) {
     case LOAD_PRODUCTS:
-      localStorage.setItem('products',JSON.stringify(action.payload.data))
+      localStorage.setItem("products", JSON.stringify(action.payload.data));
       return {
         ...state,
         products: action.payload.data,

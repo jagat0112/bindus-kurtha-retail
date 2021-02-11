@@ -37,6 +37,7 @@ const Review = ({ id }) => {
           });
     };
     getMe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const deleteReview = (review, id) => {
     productContext.deleteReview(review, id);

@@ -12,27 +12,27 @@ const Footer = () => {
               <h2 className="footer__title">About Bindus</h2>
               <ul className="footer__ul">
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     About Bindu's
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Business Enquiry
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Career
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Sitemap
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Privacy Policy
                   </Link>
                 </li>
@@ -42,27 +42,27 @@ const Footer = () => {
               <h2 className="footer__title">Customer's Services</h2>
               <ul className="footer__ul">
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Help/FAQ
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Find Link Store
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Shipping
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Delivery & Returns Payments & Refunds
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Contact Us
                   </Link>
                 </li>
@@ -72,17 +72,17 @@ const Footer = () => {
               <h2 className="footer__title">Top Categories</h2>
               <ul className="footer__ul">
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Collections
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Brands
                   </Link>
                 </li>
                 <li className="footer__list">
-                  <Link href="#" className="footer__link">
+                  <Link to="#" className="footer__link">
                     Flyers
                   </Link>
                 </li>

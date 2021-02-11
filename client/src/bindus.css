@@ -1,0 +1,29 @@
+.item-detail .item-name {
+  color: #444;
+  display: block;
+  font-size: 26px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.item-detail .item-desc {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 0 15px;
+}
+.item-detail .item-code {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.item-detail .item-price-wrapper p {
+  display: block;
+}
+.item-detail .item-price-wrapper .item-price {
+  display: flex;
+  align-items: center;
+  margin: 7px 0;
+}
+.item-detail .item-sizes {
+  margin-top: 7px;
+}
+
+/*# sourceMappingURL=bindus.css.map */

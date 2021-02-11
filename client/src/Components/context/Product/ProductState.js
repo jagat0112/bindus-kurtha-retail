@@ -26,6 +26,7 @@ const ProductState = (props) => {
   // Load Products
   const loadProducts = async () => {
     const res = await axios.get("http://localhost:5000/api/v1/clothings");
+    console.log(res);
     dispatch({ type: LOAD_PRODUCTS, payload: res.data });
   };
 

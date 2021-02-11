@@ -8,6 +8,7 @@ const Item = () => {
   let { id } = useParams();
   useEffect(() => {
     productContext.loadProduct(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const product = productContext.product;
 
@@ -27,9 +28,8 @@ const Item = () => {
           <p className="item-code">
             <strong>PRODUCT CODE:</strong> {product._id.toUpperCase()}
           </p>
-          <div className="item-price">
+          <div className="item-price-wrapper">
             <p className="mrp">MRP</p>
-            <br />
             <div className="item-price">
               {product.discount ? (
                 <p className="item-total-price">JPY {product.price}</p>
@@ -46,9 +46,9 @@ const Item = () => {
             <strong>SIZE</strong>
           </p>
           <div className="item-sizes">
-            {product.size.map((siz) => {
+            {product.size.map((siz, i) => {
               return (
-                <div key={siz} className="numberCircle">
+                <div key={i} className="numberCircle">
                   {siz}
                 </div>
               );

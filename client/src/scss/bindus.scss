@@ -1,0 +1,36 @@
+.item-detail {
+    & .item-name {
+        color: #444;
+        display: block;
+        font-size: 26px;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    & .item-desc {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 0 15px;
+    }
+
+    & .item-code {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    & .item-price-wrapper {
+        p {
+            display: block;
+        }
+
+        & .item-price {
+            display: flex;
+            align-items: center;
+            margin: 7px 0;
+        }
+    }
+
+    & .item-sizes {
+        margin-top: 7px;
+    }
+}

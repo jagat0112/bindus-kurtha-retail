@@ -42,7 +42,8 @@ function RatingIcon(props) {
 // This one also has an explicit return
 const Rating = (props) => {
   const [rating, setRating] = React.useState(0);
-  const [hoverRating, setHoverRating] = React.useState(0);
+  // const [hoverRating, setHoverRating] = React.useState(0);
+  const hoverRating = 0;
 
   const onSaveRating = (index) => {
     setRating(index);

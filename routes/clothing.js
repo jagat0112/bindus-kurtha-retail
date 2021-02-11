@@ -20,7 +20,7 @@ router.use("/:id/cart", CartRoute);
 router
   .route("/")
   .get(advancedResults(Clothing, "reviews"), showClothings)
-  .post(protect, authorize("admin"), addClothing);
+  .post(protect, addClothing);
 router
   .route("/:id")
   .get(showClothing)

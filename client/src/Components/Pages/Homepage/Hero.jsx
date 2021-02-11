@@ -8,10 +8,10 @@ const Hero = () => {
   return (
     <Carousel>
       <Carousel.Item>
-        <img className=" w-50" src={S1} height="370px" alt=""></img>
+        <img src={S1} height="370px" alt=""></img>
       </Carousel.Item>
       <Carousel.Item>
-        <img className=" w-50" src={S2} height="370px" alt=""></img>
+        <img src={S2} height="370px" alt=""></img>
       </Carousel.Item>
       <Carousel.Item>
         <img src={S3} height="370px" alt=""></img>

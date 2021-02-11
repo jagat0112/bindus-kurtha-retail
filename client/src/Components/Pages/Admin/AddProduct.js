@@ -53,13 +53,13 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
-      <Link className="btn1 back-btn" to={"/admin"}>
+    <div className="container">
+      <Link className="btn1 back-btn btn" to={"/admin"}>
         Back
       </Link>
-      <h2>Add a Product</h2>{" "}
+      <p className="admin-dashboard-text">Add a Product</p>{" "}
       {!upload ? (
-        <div>
+        <div className=" text-center">
           <form onSubmit={onSubmit}>
             <input
               type="text"
@@ -126,7 +126,7 @@ const AddProduct = () => {
             />
             <label htmlFor="publish"> Publish</label>
             <br />
-            <button type="submit" className="add-item-button">
+            <button type="submit" className="add-item-button btn">
               Add Item
             </button>
             <br />
