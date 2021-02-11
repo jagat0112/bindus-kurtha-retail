@@ -8,8 +8,6 @@ const Admin = () => {
   const authContext = useContext(AuthContext);
   const productContext = useContext(ProductContext);
 
-  const role = "admin";
-
   useEffect(() => {
     authContext.loadUser();
     productContext.loadProducts();
@@ -20,7 +18,7 @@ const Admin = () => {
   return (
     <div className="container py-5">
       <p className="admin-dashboard-text">Admin Dashboard</p>
-      {role !== "admin" || !localStorage.token ? (
+      {authContext.role !== "admin" ? (
         <div>Only Authorize for Admin</div>
       ) : (
         <div style={{ display: "flex", justifyContent: "center" }}>

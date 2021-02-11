@@ -14,7 +14,7 @@ const Login = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (isAuth || localStorage.token) {
+    if (localStorage.token) {
       history.push("/");
     }
     if (error) {
