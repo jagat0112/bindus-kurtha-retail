@@ -39,7 +39,6 @@ const Review = ({ id }) => {
   }, []);
   const deleteReview = (review, id) => {
     productContext.deleteReview(review, id);
-    productContext.loadProduct(id);
   };
   const setRating = (rating) => {
     setRatings(rating);
@@ -48,6 +47,7 @@ const Review = ({ id }) => {
     e.preventDefault();
     const form = { review, ratings };
     productContext.addReview(form, id);
+    console.log(form, id);
     setRatings("");
     setReview("");
     setDeleteWarn(false);
@@ -125,7 +125,7 @@ const Review = ({ id }) => {
               <div>
                 <h3>Write a review</h3>
                 <form onSubmit={onSubmit}>
-                  <p className="product-name">
+                  <p className="product-name text-left">
                     Product Name:<strong>{productContext.product.name}</strong>{" "}
                   </p>
                   <label className="rating-title">Your Rating:</label>

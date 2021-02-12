@@ -26,7 +26,6 @@ const ProductState = (props) => {
   // Load Products
   const loadProducts = async () => {
     const res = await axios.get("/api/v1/clothings");
-    console.log(res);
     dispatch({ type: LOAD_PRODUCTS, payload: res.data });
   };
 
@@ -74,8 +73,9 @@ const ProductState = (props) => {
     loadProduct(productId);
   };
 
-  const deleteReview = async (id) => {
-    await axios.delete(`/api/v1/reviews/${id}`);
+  const deleteReview = async (review, id) => {
+    await axios.delete(`/api/v1/reviews/${review}`);
+    loadProduct(id);
   };
   // Set Loading
   const setLoadings = (boo) => {
@@ -85,7 +85,6 @@ const ProductState = (props) => {
   // Cart State
   const showCart = async (id) => {
     const cart = await axios.get(`/api/v1/auth/${id}/cart`);
-    console.log(cart);
     dispatch({ type: SHOW_CART, payload: cart.data });
   };
 

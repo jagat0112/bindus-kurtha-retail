@@ -49,11 +49,8 @@ exports.addReview = asyncHandler(async (req, res, next) => {
 
 exports.updateReview = asyncHandler(async (req, res, next) => {
   let review = await Review.findById(req.params.id);
-  if (
-    req.user._id.toString() !== review.user.toString() ||
-    req.user.role === "admin"
-  ) {
-    next(new ErrorResponse("Not Authorized", 401));
+  if (req.user._id.toString() !== review.user.toString()) {
+    return next(new ErrorResponse("Not Authorized!", 401));
   }
   try {
     review = await Review.findByIdAndUpdate(req.params.id, req.body, {
@@ -66,7 +63,7 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
     }
     res.status(200).json({ success: true, review });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 });
 
@@ -79,12 +76,9 @@ exports.deleteReview = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse("Review Not Found", 401));
   }
 
-  console.log(review.user);
-  if (
-    req.user._id.toString() !== review.user.toString() ||
-    req.user.role === "admin"
-  ) {
-    return next(new ErrorResponse("Not Authorized", 401));
+  console.log(req.user._id.toString() === review.user.toString());
+  if (req.user._id.toString() !== review.user.toString()) {
+    return next(new ErrorResponse("Not Authorized!!!", 401));
   }
   await Review.findByIdAndDelete(req.params.id);
 
