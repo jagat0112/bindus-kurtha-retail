@@ -98,9 +98,6 @@ const Review = ({ id }) => {
             <div>
               <h3>Write a review</h3>
               <form onSubmit={onSubmit}>
-                <p>
-                  Product Name:<strong>{productContext.product.name}</strong>{" "}
-                </p>
                 <label>Your Rating:</label>
                 <AddReview ratings={setRating} />
                 <label htmlFor="review">Your Review: </label>

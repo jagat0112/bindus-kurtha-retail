@@ -14,9 +14,13 @@ const Item = () => {
 
   return (
     productContext.product && (
-      <div className="main">
-        <div className="item-img">
-          <img src={`/uploads/${product.photo}`} alt="" height="900px" />
+      <div className="main container">
+        <div className="item-img py-2">
+          <img
+            src={`/uploads/${product.photo}`}
+            alt=""
+            className="responsive center"
+          />
         </div>
         <div className="item-detail">
           <p className="item-name">{product.name}</p>

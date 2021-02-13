@@ -13068,7 +13068,32 @@ input {
 .main {
   display: flex;
   line-height: 1;
-  margin: 100px
+  margin: 100px;
+  margin: 0 10px;
+
+}
+.responsive {
+  width: 90%;
+  height: auto;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.item-img{
+margin: 0 10px
+}
+
+@media (max-width: 576px) {
+  .main {
+    display:inline;
+  }
+  .responsive {
+    width: 90%;
+  }
 }
 
 img.product-img {
